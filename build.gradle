@@ -227,7 +227,7 @@ android {
 
         debug {
             applicationIdSuffix ".debug"
-            resValue("string", "derived_app_name", "Lawnchair (Debug)")
+            resValue("string", "derived_app_name", "Pixel Launcher debugV")
 
             manifestPlaceholders.quickstepMinSdk = "0"
             manifestPlaceholders.quickstepMaxSdk = "100000"
@@ -236,7 +236,7 @@ android {
         }
 
         release {
-            resValue("string", "derived_app_name", "Lawnchair")
+            resValue("string", "derived_app_name", "Pixel Launcher")
             minifyEnabled true
             shrinkResources true
             pseudoLocalesEnabled false
@@ -267,23 +267,23 @@ android {
         }
 
         github {
-            applicationId 'app.lawnchair'
+            applicationId "com.google.android.apps.nexuslauncher"
             dimension "channel"
         }
 
         nightly {
-            applicationId 'app.lawnchair.nightly'
+            applicationId "com.google.android.apps.nexuslauncher"
             dimension "channel"
         }
 
         play {
-            applicationId "app.lawnchair.play"
+            applicationId "com.google.android.apps.nexuslauncher"
             dimension "channel"
             isDefault true
         }
 
         configureEach {
-            resValue("string", "launcher_component", "${applicationId}/app.lawnchair.LawnchairLauncher")
+            resValue("string", "launcher_component", "${applicationId}/com.google.android.apps.nexuslauncher")
         }
     }
 
@@ -302,16 +302,16 @@ android {
         }
 
         lawn {
-            java.srcDirs = ['src_flags', 'src_shortcuts_overrides', 'lawnchair/src', 'tests/shared']
-            kotlin.directories.addAll('src_flags', 'src_shortcuts_overrides', 'lawnchair/src', 'tests/shared')
-            aidl.srcDirs = ['lawnchair/aidl']
-            res.srcDirs = ['lawnchair/res', 'platform_frameworks_libs_systemui/animationlib/res']
-            manifest.srcFile "lawnchair/AndroidManifest.xml"
+            java.srcDirs = ['src_flags', 'src_shortcuts_overrides', 'pixellauncher/src', 'tests/shared']
+            kotlin.directories.addAll('src_flags', 'src_shortcuts_overrides', 'pixellauncher/src', 'tests/shared')
+            aidl.srcDirs = ['pixellauncher/aidl']
+            res.srcDirs = ['pixellauncher/res', 'platform_frameworks_libs_systemui/animationlib/res']
+            manifest.srcFile "pixellauncher/AndroidManifest.xml"
             assets {
-                srcDirs 'lawnchair/assets'
+                srcDirs 'pixellauncher/assets'
             }
             proto {
-                srcDirs = ['lawnchair/protos/']
+                srcDirs = ['pixellauncher/protos/']
             }
         }
 
